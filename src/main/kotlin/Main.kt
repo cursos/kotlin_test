@@ -21,6 +21,26 @@ fun maps() {
     )
     println(edadSuperHeroes)
 
+    val edadSuperHeroesM = mutableMapOf(
+        "Ironman" to 35,
+        "Spiderman" to 23,
+        "Capitan America" to 99,
+    )
+    println(edadSuperHeroesM)
+
+    //add super heroes
+    edadSuperHeroesM.put("wolvering",45)
+    edadSuperHeroesM["Storm"] = 30
+    println(edadSuperHeroesM)
+
+    val edadIronMan = edadSuperHeroes["Ironman"]
+    println(edadIronMan)
+
+    edadSuperHeroesM.remove("Wolvering")
+    println(edadSuperHeroesM)
+
+    print(edadSuperHeroesM.keys)
+
 }
 
 fun fnListas() {
