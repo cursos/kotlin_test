@@ -6,9 +6,53 @@ fun main(args: Array<String>) {
 
     //nullable()
 
-    listas()
+    //listas()
+
+    //fnListas()
+
+    maps()
 }
 
+fun maps() {
+    val edadSuperHeroes = mapOf(
+        "Ironman" to 35,
+        "Spiderman" to 23,
+        "Capitan America" to 99,
+    )
+    println(edadSuperHeroes)
+
+}
+
+fun fnListas() {
+    val numerosDeLoteria = listOf(11,22,43,56,78,66)
+    println(numerosDeLoteria)
+
+
+
+    val numerosSort = numerosDeLoteria.sorted()
+    println(numerosSort)
+
+    val numerosSortDes = numerosSort.sortedDescending()
+    println(numerosSortDes)
+
+    val ordenarMultiplos = numerosDeLoteria.sortedBy { numero -> numero < 50 }
+    println(ordenarMultiplos)
+
+    val numerosAleatorios = numerosDeLoteria.shuffled()
+    println(numerosAleatorios)
+
+    val numerosReverse = numerosDeLoteria.reversed()
+    println(numerosReverse)
+
+    val mensajeDeNumeros = numerosDeLoteria.map {
+            numero -> "Tu numero de loteria es $numero \n"
+    }
+    println(mensajeDeNumeros)
+
+    val mayor50 = numerosDeLoteria.filter { numero -> numero > 50}
+    println(mayor50)
+
+}
 
 
 fun variablesAndwhen(){
