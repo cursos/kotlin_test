@@ -10,7 +10,86 @@ fun main(args: Array<String>) {
 
     //fnListas()
 
-    maps()
+    //maps()
+
+    //sets()
+
+   // println("Pedro".ramdomCase())
+
+   // imprimirNombre(nombre ="Carlos", segundoNombre = "", apellido = "Rey")
+
+//lambdas()
+
+    //highOrderFunctions()
+
+}
+
+fun highOrderFunctions() {
+val largoValorInicial = superFunction(valorInicial = "Hola", block = {valor -> valor.length})
+    println(largoValorInicial)
+
+    val lambda: () -> String = funsionIncepsion("Enrique")
+    val valorLambda: String = lambda()
+    println(valorLambda)
+}
+
+fun superFunction(valorInicial: String, block : (String) -> Int): Int {
+return block(valorInicial)
+}
+
+fun funsionIncepsion(nombre : String): () -> String {
+    return {
+        "Hola desde lambda $nombre"
+    }
+}
+
+fun lambdas() {
+   val myLanbda : (String) -> Int = {
+       valor -> valor.length
+   }
+
+    val lambdaEjecutada: Int = myLanbda("Hola platzi")
+
+    println(lambdaEjecutada)
+
+    val saludos = listOf("Hello", "hola", "Ciao")
+    val longitudSaludos = saludos.map(myLanbda)
+
+    println(longitudSaludos)
+
+
+}
+
+fun String.ramdomCase(): String{
+    val numeroAleatorio = 0..99
+    val resultadoAleatorio = numeroAleatorio.random()
+    val residuo = resultadoAleatorio % 2
+    if(residuo == 0)return this.uppercase()else return this.lowercase()
+
+}
+
+fun imprimirNombre(nombre: String, segundoNombre:String = "", apellido: String){
+println("Mi nombre es: $nombre $segundoNombre y mi apellido es: $apellido")
+}
+
+fun sets(){
+    val vocalesRepetidas = setOf("a","e","i","o", "u", "a","e","i","o", "u")
+    println(vocalesRepetidas)
+
+    val numerosFavoritos = mutableSetOf("3", "7", "5")
+    println(numerosFavoritos)
+
+    numerosFavoritos.add("11")
+    println(numerosFavoritos)
+
+    numerosFavoritos.add("11")
+    println(numerosFavoritos)
+
+    numerosFavoritos.remove("11")
+    println(numerosFavoritos)
+
+    val valorDelSec = numerosFavoritos.first { numero -> numero == "5" }
+    print(valorDelSec)
 }
 
 fun maps() {
