@@ -22,6 +22,40 @@ fun main(args: Array<String>) {
 
     //highOrderFunctions()
 
+    //letFunctions()
+
+    //withFun()
+
+    runFun()
+
+}
+
+fun runFun() {
+    val moviles = mutableListOf("Pixel", "huawei", "xiaomi")
+        .run {
+            removeIf{movil -> movil.contains("Pixel")}
+            this
+        }
+    println(moviles)
+}
+
+fun withFun() {
+    val colores = listOf("amarillo", "azul", "rojo")
+    with(colores){
+        println("nuestros colores son ${this}")
+        println("esta lista tiene $size colores")
+
+    }
+}
+
+
+fun letFunctions() {
+    var nombre : String? = null
+    nombre?.let { valor -> "El nombre no es nulo, es: $valor" }
+
+    nombre = "Carlus"
+    nombre.let{ valor -> println("El nombre no es nulo, es: $valor")
+    }
 }
 
 fun highOrderFunctions() {
